@@ -16,7 +16,7 @@ class CreatePrefsTable extends Migration
         Schema::create('prefs', function (Blueprint $table) {
             $table->increments('id')->comment('ID');
             $table->varchar('name',128)->comment('都道府県名');
-            $table->timestamp('created_at')->useCurrent()->comment('作成日時'); 
+            $table->timestamp('created_at')->useCurrent()->comment('作成日時');
             $table->timestamp('updated_at')->useCurrent()->comment('更新日時');
         });
     }
