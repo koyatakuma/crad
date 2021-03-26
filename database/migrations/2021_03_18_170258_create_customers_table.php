@@ -21,17 +21,17 @@ class CreateCustomersTable extends Migration
             $table->string('first_kana',255)->comment('名かな');
             $table->integer('gender')->unsigned()->comment('性別');
             $table->dateTime('birthday')->comment('生年月日');
-            $table->stiring('post_code',255)->comment('郵便番号');
+            $table->string('post_code',255)->comment('郵便番号');
             $table->integer('pref_id')->unsigned()->comment('都道府県ID');
-            $table->stiring('address',255)->comment('住所');
-            $table->stiring('building',255)->nullable()->comment('建物名');
-            $table->stiring('tel',255)->comment('電話番号');
-            $table->stiring('mobile',255)->comment('携帯番号');
-            $table->stiring('email',255)->comment('メールアドレス');
+            $table->string('address',255)->comment('住所');
+            $table->string('building',255)->nullable()->comment('建物名');
+            $table->string('tel',255)->comment('電話番号');
+            $table->string('mobile',255)->comment('携帯番号');
+            $table->string('email',255)->comment('メールアドレス');
             $table->text('remarks')->nullable()->comment('備考');
             $table->timestamp('created_at')->useCurrent()->comment('作成日時');
             $table->timestamp('updated_at')->useCurrent()->comment('更新日時');
-            $table->unipue(['email'], 'customers_email_unipue');
+            $table->unique(['email'], 'customers_email_unique');
             $table->foreign('pref_id')->references('id')->on('prefs');
         });
     }
