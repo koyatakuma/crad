@@ -50,8 +50,7 @@ class PrefsTableSeeder extends Seeder
             ['id' => 47	, 'name'=> '沖縄県']
         ];
 
-        DB::table('prefs')->insret($list);
+        DB::table('prefs')->insert($list);
 
-        
     }
 }
