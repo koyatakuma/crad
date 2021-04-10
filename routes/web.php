@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+Route::get('/','IndexController@index');
+Route::get('/create','CreateController@create');
+Route::get('/edit','EditController@edit');
+Route::get('/detail','DetailController@detail');
