@@ -14,7 +14,27 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/','IndexController@index');
-Route::get('/create','CreateController@create');
-Route::get('/edit','EditController@edit');
-Route::get('/detail','DetailController@detail');
+
+//初期表示
+Route::get('/','CustomerController@index')->name('index');
+
+//検索処理
+Route::post('/search','CustomerController@search')->name('search');
+
+//新規登録画面の表示
+Route::get('/create','CustomerController@create')->name('create');
+
+//編集画面の表示
+Route::get('/edit/{id}','CustomerController@edit')->name('edit');
+
+//詳細画面の表示
+Route::get('/detail/{id}','CustomerController@detail')->name('detail');
+
+//登録処理
+Route::post('/store','CustomerController@store')->name('store');
+
+//更新処理
+Route::post('/update','CustomerController@update')->name('update');
+
+//削除処理
+Route::get('/delete/{id}','CustomerController@delete')->name('delete');
