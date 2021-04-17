@@ -21,8 +21,7 @@ class CustomerController extends Controller
 
     public function create(){
         $prefs = Pref::all();
-        // var_dump($prefs);
-        return view('create');
+        return view('create',['prefs' => $prefs]);
     }
 
     public function detail(Request $request){
